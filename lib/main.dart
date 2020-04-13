@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:homepage/Courses.dart';
 import 'package:homepage/LogoPaint.dart';
 
 import 'dart:math';
@@ -143,296 +144,300 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
       appBar: AppBar(title: Text("dfklj"),),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          SizedBox(height: 32,),
-          // Padding(
-          //   padding: EdgeInsets.fromLTRB(16,0,0,8),
-          //   child: Text("Referrals"),
-          // ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Container(
-                width: widht/2-24,
-                height: widht/3,
-                child: Stack(
-                  children: <Widget>[
-                    Container(
-                      padding: EdgeInsets.fromLTRB(0, 0, 4, 0),
-                      width: widht/2,
-                      height: widht/3,  
-                      child: Card(
-                        elevation: 10,
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            SizedBox(height: 32,),
+            // Padding(
+            //   padding: EdgeInsets.fromLTRB(16,0,0,8),
+            //   child: Text("Referrals"),
+            // ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Container(
+                  width: widht/2-24,
+                  height: widht/3,
+                  child: Stack(
+                    children: <Widget>[
+                      Container(
+                        padding: EdgeInsets.fromLTRB(0, 0, 4, 0),
+                        width: widht/2,
+                        height: widht/3,  
+                        child: Card(
+                          elevation: 10,
+                        ),
                       ),
-                    ),
-                    Container(
-                      width: widht/2-24,
-                      height: widht/3,  
-                      child: CustomPaint(
-                        painter: MyPainter('g'),
+                      
+                      Container(
+                        width: widht/2-24,
+                        height: widht/3,  
+                        child: CustomPaint(
+                          painter: MyPainter('g'),
+                        ),
                       ),
-                    ),
 
-                    Container(
-                      width: widht/2-24,
-                      height: double.infinity,
-                      alignment: Alignment.center,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Container(
-                            padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
-                            width: widht/2-24-60,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Text("Settled", style: titleStyle.copyWith(color: darkGreen),),
-                                Text("All your settled referrals.", style: descStyle.copyWith(color: darkGreen),),
-                              ],
+                      Container(
+                        width: widht/2-24,
+                        height: double.infinity,
+                        alignment: Alignment.center,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
+                              width: widht/2-24-60,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Text("Settled", style: titleStyle.copyWith(color: darkGreen),),
+                                  Text("All your settled referrals.", style: descStyle.copyWith(color: darkGreen),),
+                                ],
+                              ),
                             ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.all(widht/12-20),
-                            child: Icon(Icons.event_available, color: Colors.white,)
-                          )
-                        ],
+                            Padding(
+                              padding: EdgeInsets.all(widht/12-30),
+                              child: Icon(Icons.event_available, color: Colors.white, size: widht/8,)
+                            )
+                          ],
+                        )
                       )
-                    )
-                    
-                  ],
-                )
-              ),
-              Container(
-                width: widht/2-24,
-                height: widht/3,
-                child: Stack(
-                  children: <Widget>[
-                    Container(
-                      padding: EdgeInsets.fromLTRB(0, 0, 4, 0),
-                      width: widht/2,
-                      height: widht/3,  
-                      child: Card(
-                        elevation: 10,
+                      
+                    ],
+                  )
+                ),
+                Container(
+                  width: widht/2-24,
+                  height: widht/3,
+                  child: Stack(
+                    children: <Widget>[
+                      Container(
+                        padding: EdgeInsets.fromLTRB(0, 0, 4, 0),
+                        width: widht/2,
+                        height: widht/3,  
+                        child: Card(
+                          elevation: 10,
+                        ),
                       ),
-                    ),
-                    Container(
-                      width: widht/2-24,
-                      height: widht/3,  
-                      child: CustomPaint(
-                        painter: MyPainter('p'),
+                      Container(
+                        width: widht/2-24,
+                        height: widht/3,  
+                        child: CustomPaint(
+                          painter: MyPainter('p'),
+                        ),
                       ),
-                    ),
 
-                    Container(
-                      width: double.infinity,
-                      height: double.infinity,
-                      alignment: Alignment.center,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Container(
-                            padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
-                            width: widht/2-24-60,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Text("Approved", style: titleStyle.copyWith(color: darkPurple),),
-                                Text("All your approved referrals.", style: descStyle.copyWith(color: darkPurple),),
-                              ],
+                      Container(
+                        width: double.infinity,
+                        height: double.infinity,
+                        alignment: Alignment.center,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
+                              width: widht/2-24-60,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Text("Approved", style: titleStyle.copyWith(color: darkPurple),),
+                                  Text("All your approved referrals.", style: descStyle.copyWith(color: darkPurple),),
+                                ],
+                              ),
                             ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.fromLTRB(widht/12-20, 0, widht/12-20, 0),
-                            child: Icon(Icons.event, color: Colors.white,)
-                          )
-                        ],
+                            Padding(
+                              padding: EdgeInsets.all(widht/12-30),
+                              child: Icon(Icons.event, color: Colors.white, size: widht/8,)
+                            )
+                          ],
+                        )
                       )
-                    )
-                    
-                  ],
-                )
-              ),
-              
-            ],
-          ),
-          SizedBox(height: 16.0,),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Container(
-                width: widht/2-24,
-                height: widht/3,
-                child: Stack(
-                  children: <Widget>[
-                    Container(
-                      padding: EdgeInsets.fromLTRB(0, 0, 4, 0),
-                      width: widht/2,
-                      height: widht/3,  
-                      child: Card(
-                        elevation: 10,
+                      
+                    ],
+                  )
+                ),
+                
+              ],
+            ),
+            SizedBox(height: 16.0,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Container(
+                  width: widht/2-24,
+                  height: widht/3,
+                  child: Stack(
+                    children: <Widget>[
+                      Container(
+                        padding: EdgeInsets.fromLTRB(0, 0, 4, 0),
+                        width: widht/2,
+                        height: widht/3,  
+                        child: Card(
+                          elevation: 10,
+                        ),
                       ),
-                    ),
-                    Container(
-                      width: widht/2-24,
-                      height: widht/3,  
-                      child: CustomPaint(
-                        painter: MyPainter('b'),
+                      Container(
+                        width: widht/2-24,
+                        height: widht/3,  
+                        child: CustomPaint(
+                          painter: MyPainter('b'),
+                        ),
                       ),
-                    ),
 
-                    Container(
-                      width: double.infinity,
-                      height: double.infinity,
-                      alignment: Alignment.center,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Container(
-                            padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
-                            width: widht/2-24-60,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Text("Pendings", style: titleStyle.copyWith(color: darkBlue),),
-                                Text("All your pending referrals.", style: descStyle.copyWith(color: darkBlue),),
-                              ],
+                      Container(
+                        width: double.infinity,
+                        height: double.infinity,
+                        alignment: Alignment.center,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
+                              width: widht/2-24-60,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Text("Pendings", style: titleStyle.copyWith(color: darkBlue),),
+                                  Text("All your pending referrals.", style: descStyle.copyWith(color: darkBlue),),
+                                ],
+                              ),
                             ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.all(widht/12-20),
-                            child: Icon(Icons.event_note, color: Colors.white,)
-                          )
-                        ],
+                            Padding(
+                              padding: EdgeInsets.all(widht/12-30),
+                              child: Icon(Icons.event_note, color: Colors.white, size: widht/8,)
+                            )
+                          ],
+                        )
                       )
-                    )
-                    
-                  ],
-                )
-              ),
-              Container(
-                width: widht/2-24,
-                height: widht/3,
-                child: Stack(
-                  children: <Widget>[
-                    Container(
-                      padding: EdgeInsets.fromLTRB(0, 0, 4, 0),
-                      width: widht/2,
-                      height: widht/3,  
-                      child: Card(
-                        elevation: 10,
+                      
+                    ],
+                  )
+                ),
+                Container(
+                  width: widht/2-24,
+                  height: widht/3,
+                  child: Stack(
+                    children: <Widget>[
+                      Container(
+                        padding: EdgeInsets.fromLTRB(0, 0, 4, 0),
+                        width: widht/2,
+                        height: widht/3,  
+                        child: Card(
+                          elevation: 10,
+                        ),
                       ),
-                    ),
-                    Container(
-                      width: widht/2-24,
-                      height: widht/3,  
-                      child: CustomPaint(
-                        painter: MyPainter('r'),
+                      Container(
+                        width: widht/2-24,
+                        height: widht/3,  
+                        child: CustomPaint(
+                          painter: MyPainter('r'),
+                        ),
                       ),
-                    ),
 
-                    Container(
-                      width: widht/2-24,
-                      height: widht/3,
-                      alignment: Alignment.center,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Container(
-                            padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
-                            width: widht/2-24-60,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Text("Refused", style: titleStyle.copyWith(color: darkRed),),
-                                Text("All your refused referrals.", style: descStyle.copyWith(color: darkRed),),
-                              ],
+                      Container(
+                        width: widht/2-24,
+                        height: widht/3,
+                        alignment: Alignment.center,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
+                              width: widht/2-24-60,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Text("Refused", style: titleStyle.copyWith(color: darkRed),),
+                                  Text("All your refused referrals.", style: descStyle.copyWith(color: darkRed),),
+                                ],
+                              ),
                             ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.all(widht/12-20),
-                            child: Icon(Icons.event_busy, color: Colors.white,)
-                          )
-                        ],
+                            Padding(
+                              padding: EdgeInsets.all(widht/12-30),
+                              child: Icon(Icons.event_busy, color: Colors.white, size: widht/8,)
+                            )
+                          ],
+                        )
                       )
-                    )
-                    
-                  ],
-                )
-              ),
-              
-            ],
-          ),
-          Container(
-            margin: EdgeInsets.all(16),
-            width: widht,
-            height: widht/3,
-              child: Center(
-                child: Stack(
-                  children: <Widget>[
+                      
+                    ],
+                  )
+                ),
+                
+              ],
+            ),
+            Container(
+              margin: EdgeInsets.all(16),
+              width: widht,
+              height: widht/3,
+                child: Center(
+                  child: Stack(
+                    children: <Widget>[
 
-                    Container(
-                      padding: EdgeInsets.fromLTRB(0, 0, 4, 0),
-                      width: widht/2,
-                      height: widht/3,  
-                      child: Card(
-                        elevation: 10,
+                      Container(
+                        padding: EdgeInsets.fromLTRB(0, 0, 4, 0),
+                        width: widht/2,
+                        height: widht/3,  
+                        child: Card(
+                          elevation: 10,
+                        ),
                       ),
-                    ),
-                    
-                    
-                    Container(
-                      width: widht/2,
-                      height: widht/3,  
-                      child: CustomPaint(
-                        painter: MyPainter('0'),
+                      
+                      
+                      Container(
+                        width: widht/2,
+                        height: widht/3,  
+                        child: CustomPaint(
+                          painter: MyPainter('0'),
+                        ),
                       ),
-                    ),
 
-                    Container(
-                      width: widht/2-24,
-                      height: double.infinity,
-                      alignment: Alignment.center,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Container(
-                            padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
-                            width: widht/3-24,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Text("Add Referral", style: titleStyle.copyWith(color: darkOrange, fontSize: 22),),
-                                Text("Refer and earn.", style: descStyle.copyWith(color: darkOrange),),
-                              ],
+                      Container(
+                        width: widht/2-8,
+                        height: double.infinity,
+                        alignment: Alignment.center,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
+                              width: widht/3-24,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Text("Add Referral", style: titleStyle.copyWith(color: darkOrange, fontSize: 22),),
+                                  Text("Refer and earn.", style: descStyle.copyWith(color: darkOrange),),
+                                ],
+                              ),
                             ),
-                          ),
-                          // Padding(
-                            // padding: EdgeInsets.all(widht/12),
-                            // child: 
-                            Icon(Icons.person_add, color: Colors.white,)
-                          // )
-                        ],
+                            // Padding(
+                              // padding: EdgeInsets.all(widht/12),
+                              // child: 
+                              Icon(Icons.person_add, color: Colors.white, size: widht/8,)
+                            // )
+                          ],
+                        )
                       )
-                    )
-                    
-                  ],
+                      
+                    ],
+                  )
                 )
-              )
-          ),
-        ],
-        
+            ),
+            
+            
+          ],
+          
+        ),
       )
     );
   }
